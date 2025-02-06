@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    container_name: gladia_transcription
+    user: "66730:66049"
+    command:
+    - "/bin/bash"
+    - "-c"
+    - "while(true); do sleep 300; done"
+    volumes:
+      - .:/app
+    environment:
+    - HOME=/home/appuser
+    env_file:
+      - .env
